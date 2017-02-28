@@ -4,12 +4,49 @@
 	<title>Animal Gif's!</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="javascript/myJS.js"></script>
 </head>
 <body>
 
+<nav class="navbar navbar-inverse" style="background-color: #346ead">
+	<div class="container-fluid">
+			<!--Logo! -->	
+		<div class="navbar-header">
+			<a href="index.html"><img src="http://oi63.tinypic.com/2ltg6dw.jpg" style= "width: 150px; height: 65px"></a>
+			<p id="logo"><img id="search_pic" src="images/search-symbol.png" style="width:50px; height:50px">Gif Generator</p>
+		</div>
+	</div>
+</nav>
 
+	<!-- Animal Gif Buttons  -->
+<div class="container-fluid">
+	<div class="col-sm-1"></div>
+		<div class="col-sm-10" id="gifButtonArea"></div>
+	<div class="col-sm-1"></div>
+</div>
+
+<div class="container-fluid">
+	<!-- user input -->
+	<div class="col-sm-2" id="inputArea">
+		<p>Add an animal:</p>
+		<input id="addAnimalInput" >
+		<button id="submitNewAnimal">Submit</button>
+		<button id="clearNewAnimal">Clear</button>
+	</div>
+	<div class="col-sm-1"></div>
+	<!-- render gif display -->
+	<div class="col-sm-9" id="renderGifsHere">
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="col-sm-1"></div>
+		<div class="col-sm-10"></div>
+	<div class="col-sm-1"></div>
+</div>
 
 </body>
+
 </html>
