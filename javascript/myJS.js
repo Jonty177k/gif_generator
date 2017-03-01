@@ -42,14 +42,19 @@ $(document).ready(function() {
 	          var results = response.data;
 
 	          for (var i = 0; i < results.length; i++) {
-	            var gifDiv = $("<div class='item'>");
+	            var gifDiv = $("<div class='item' >");
 
 	            var rating = results[i].rating;
 
 	            var p = $("<p>").text("Rating: " + rating);
 
-	            var animalImage = $("<img>");
-	            animalImage.attr("src", results[i].images.fixed_height_still.url);
+	            var altAnimalURL = results[i].images.fixed_height.url;
+
+	            var animalURL = results[i].images.fixed_height_still.url;
+
+	            var animalImage = $("<img class='gif' base-url="+animalURL+" other-url="+altAnimalURL+">");
+
+	            animalImage.attr("src", animalURL);
 
 	            gifDiv.prepend(p);
 	            gifDiv.prepend(animalImage);
@@ -102,7 +107,7 @@ $(document).ready(function() {
 
             var animalURL = results[i].images.fixed_height_still.url;
 
-            var animalImage = $("<img class='.gif' base-url="+animalURL+" other-url="+altAnimalURL+">");
+            var animalImage = $("<img class='gif' base-url="+animalURL+" other-url="+altAnimalURL+">");
 
             animalImage.attr("src", animalURL);
 
@@ -112,28 +117,27 @@ $(document).ready(function() {
             $("#renderGifsHere").prepend(gifDiv);
           }
 
-          // $(document).on("click", ".gif", function() {
-
-          // 	console.log("hello world");
-
-          // 	var checker = $(this).attr("base-url");
-
-          // 	if (checker == animalURL) {
-
-          // 		$(this).attr("src", $(this).attr("other-url"));
-
-          //   }
-          //   else {
-
-          //   }
-
-          //   console.log(altAnimalImage);
-
-          // });
-
       });
+
     });
+
 	});
+
+
+
+    $(document).on("mouseover",".gif", function() {
+
+        $(this).attr("src", $(this).attr("other-url"));
+
+	});
+
+    $(document).on("mouseout",".gif", function() {
+
+        $(this).attr("src", $(this).attr("base-url"));
+
+	});
+
+
 
 	renderButtons();
 
