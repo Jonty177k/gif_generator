@@ -28,7 +28,7 @@ $(document).ready(function() {
 		$(".items").on("click", function() {
 
 	    var searchAnimal = $(this).text();
-	    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+	    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
 	        searchAnimal + "&api_key=dc6zaTOxFJmzC&limit=5";
 
 	      console.log(searchAnimal);
@@ -47,6 +47,7 @@ $(document).ready(function() {
 	            var rating = results[i].rating;
 
 	            var p = $("<p>").text("Rating: " + rating);
+	            //var b = $("<button class='copy-this'>").text("copy url");
 
 	            var altAnimalURL = results[i].images.fixed_height.url;
 
@@ -57,7 +58,9 @@ $(document).ready(function() {
 	            animalImage.attr("src", animalURL);
 
 	            gifDiv.prepend(p);
+	            //gifDiv.prepend(b);
 	            gifDiv.prepend(animalImage);
+	            
 
 	            $("#renderGifsHere").prepend(gifDiv);
 	          }
@@ -82,7 +85,7 @@ $(document).ready(function() {
 	$(".items").on("click", function() {
 
     var searchAnimal = $(this).text();
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" +
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         searchAnimal + "&api_key=dc6zaTOxFJmzC&limit=5";
 
       console.log(searchAnimal);
@@ -103,6 +106,8 @@ $(document).ready(function() {
 
             var p = $("<p>").text("Rating: " + rating);
 
+            //var b = $("<button class='copy-this'>").text("copy url");
+
             var altAnimalURL = results[i].images.fixed_height.url;
 
             var animalURL = results[i].images.fixed_height_still.url;
@@ -112,6 +117,7 @@ $(document).ready(function() {
             animalImage.attr("src", animalURL);
 
             gifDiv.prepend(p);
+            //gifDiv.prepend(b);
             gifDiv.prepend(animalImage);
 
             $("#renderGifsHere").prepend(gifDiv);
@@ -137,8 +143,19 @@ $(document).ready(function() {
 
 	});
 
+	// $(document).on("click", ".gif", function() {
 
+	// 	var copyURL = $(this).attr("other-url");
+
+	// 	console.log(copyURL);
+
+	// 	//copyURL.execCommand('copy');
+
+	// 	window.clipboard.setData("Text", copyURL);
+
+	// });
 
 	renderButtons();
 
 });
+
